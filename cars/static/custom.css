@@ -1,0 +1,21 @@
+img {
+	width:100%;
+	height:250px;
+}
+#ch{
+	width:600px;
+	height:600px;
+}
+.this{
+width: 100%
+}
+
+.card{
+	margin-bottom: 20px;
+}
+#bg {
+	background-image: url("background.jpg");
+	 background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+}

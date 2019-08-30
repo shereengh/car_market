@@ -1,19 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Car List</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load static %}
+  {% block title %}Car List{% endblock title %}
+
+  {% block content %}
+  <br>
+  <div class="row">
 	{% for car in cars %}
-		<a href="{{car.get_absolute_url}}">
-			<h1>
-				{{car.make}} - {{car.model}}
-				<small>
-					{{car.year}}
-				</small>
-			</h1>
-		</a>
-		<hr>
+	<div class="col-md-4">
+		<div class="card my-4" style="width: 18rem;">
+			{%if car.car_img %}
+			  <img  src="{{ car.car_img.url}}" class="card-img-top">
+			{% else %}
+			<img  src="{% static 'noimage.png' %}" class="card-img-top">
+			{% endif %}
+			  <div class="card-body">
+			  	<h5 class="card-title">{{car.model}}</h5>
+			  	<p class="card-text">{{car.make}}</p>
+			  	<p class="card-text">{{car.year}}</p>
+		<a href="{{car.get_absolute_url}}" class="btn btn-primary">Read more</a>
+	</div>
+</div>
+</div>
 	{% endfor %}
-</body>
-</html>
+</div>
+
+{% endblock content %}
+
